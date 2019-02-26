@@ -10,8 +10,10 @@ server.use(bp.urlencoded({ extended: true }))
 
 
 let carRoutes = require('./server-assets/routes/car-route')
+let jobRoutes = require('./server-assets/routes/job-route')
 
 server.use('/api/cars', carRoutes)
+server.use('/api/jobs', jobRoutes)
 
 server.use('*', (req, res, next) => {
   res.status(404).send('No matching routes')
